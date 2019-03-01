@@ -1,8 +1,13 @@
 <html>
+<head>
+        <br>Hello Dog!</br>
+</head>
 <body>
-    ${value1}
-    <#list colors as color>
+<#list colors as color>
         <br>this is ${color} ${color_index} </br>
-    </#list>
+</#list>
+<#list map?keys as key>
+        <br>key:${key}=${map[key]}</br>
+</#list>
 </body>
 </html>
