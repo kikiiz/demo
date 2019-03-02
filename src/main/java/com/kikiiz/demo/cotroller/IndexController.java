@@ -1,5 +1,6 @@
 package com.kikiiz.demo.cotroller;
 
+import com.kikiiz.demo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,7 @@ public class IndexController {
             map.put(String.valueOf(i),String.valueOf(i*i));
         }
         model.addAttribute("map",map);
+        model.addAttribute("user",new User("MiMi"));//注意用法
         return "home";
     }
 }

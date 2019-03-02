@@ -1,13 +1,42 @@
 <html>
-<head>
-        <br>Hello Dog!</br>
-</head>
-<body>
-<#list colors as color>
-        <br>this is ${color} ${color_index} </br>
-</#list>
-<#list map?keys as key>
-        <br>key:${key}=${map[key]}</br>
-</#list>
-</body>
+    <head>
+
+    </head>
+
+    <body>
+        <#--List和Map的使用-->
+        <#list colors as color>
+            <br>this is ${color} ${color_index} <br>
+        </#list>
+
+        <#list map?keys as key>
+            <br>key:${key}=${map[key]}<br>
+        </#list>
+
+        <#--自定义类的使用-->
+        <br>User:${user.name}<br>
+        <br>User:${user.getName()}<br>
+        <br>${user.description}<br>
+        <br>${user.getDescription()}<br>
+
+        <#--模板内定义变量-->
+        <#assign title = "silly dog">
+        <br>Title: ${title}<br>
+
+        <#--模板间的继承-->
+        <br><#include "header.html"/><br>
+
+        <#--模板内定义函数-->
+        <#macro Fun a b c>
+            Print and test ${a},${b},${b}
+        </#macro>
+        <br><@Fun a="A" b="b" c="c"/><br>
+
+        <#--模板内定义和调用变量-->
+        <#assign hello="hello">
+        <#assign helloworld="${hello} world">
+        <br>${helloworld}<br>
+
+    </body>
+
 </html>
