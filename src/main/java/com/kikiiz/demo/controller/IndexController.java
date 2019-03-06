@@ -1,7 +1,10 @@
 package com.kikiiz.demo.controller;
 
+import com.kikiiz.demo.aspect.LogAspect;
 import com.kikiiz.demo.model.User;
 import com.kikiiz.demo.service.WendaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -21,9 +24,12 @@ public class IndexController {
     @Autowired
     WendaService wendaService;
 
+    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+
     @RequestMapping(path={"/","/index"},method = {RequestMethod.GET})
     @ResponseBody
     public String index(HttpSession httpSession){
+        logger.info("visit home");
         return wendaService.getMessage(2)+"Hello Dogs!"+httpSession.getAttribute("msg");
     }
 
