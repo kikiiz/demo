@@ -1,6 +1,7 @@
 package com.kikiiz.demo.controller;
 
 import com.kikiiz.demo.aspect.LogAspect;
+import com.kikiiz.demo.dao.UserDao;
 import com.kikiiz.demo.model.User;
 import com.kikiiz.demo.service.WendaService;
 import org.slf4j.Logger;
